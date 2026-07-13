@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="parent">
+        <button id="child">Click me</button>
+    </div>
+    <!-- <script>
+        document.getElementById("parent").addEventListener("click", () => {
+            console.log("Parent clicked");
+        });
+
+        document.getElementById("child").addEventListener("click", () => {
+            console.log("Child clicked");
+        });
+
+        <!-- // this will print "Parent clicked" and "Child clicked" -->
+        <!-- // but if you want to stop the event from bubbling up to the parent, you can use event.stopPropagation() in the child click handler: -->
+    </script> -->
+     <!-- // but if you want to stop the event from bubbling up to the parent, you can use event.stopPropagation() in the child click handler: -->
+<script>
+    document.getElementById("child").addEventListener("click", () => {
+        event.stopPropagation();
+            console.log("Child clicked");
+        });
+</script>
+</body>
+
+</html>
+
+
+<!-- Event Bubbling vs Capturing
+Concept
+Jab tum kisi element pe click karte ho jo nested hai (jaise ek button jo ek div ke andar hai, jo aur bade container ke andar hai), event teen phases mein travel karta hai:
+
+Capturing phase — event top se neeche jaata hai (document → parent → child → target element)
+Target phase — event apne actual target pe pahunchta hai
+Bubbling phase — event neeche se upar jaata hai (target → parent → parent → document) -->
