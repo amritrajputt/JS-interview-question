@@ -8,3 +8,13 @@ function groupBy(arr, key) {
         return acc
     }, {})
 }
+
+function groupBy(arr, res) {
+    return arr.reduce((acc, obj) => {
+        const group = obj[key]
+
+        if (!acc.has(group)) acc.set(group, []);
+        acc.get(group).push(obj)
+        return acc
+    }, new Map())
+}
