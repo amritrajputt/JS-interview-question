@@ -16,3 +16,7 @@ function curry(fn) {
         };
     };
 }
+funcall = curry(function (a, b, c) {
+    return a + b + c;
+});
+console.log(funcall(1, 2, 3)); // 6

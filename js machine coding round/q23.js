@@ -13,7 +13,7 @@ function readFilePromise(path) {
     if (!path) return "path to de deta😭";
     return new Promise((res, rej) => {
         fs.readFile(path, "utf-8", (err, data) => {
-            if (err) rej("error occurs")
+            if (err) rej("error occurs",err)
             else res(data)
         })
     })
@@ -25,6 +25,9 @@ readFilePromise("../react-node-interview-prep.md")
             .then(data2 => console.log(data1, data2))
     })
     .catch(err => console.error(err));
+
+
+    
 async function readAllFiles() {
     try {
         const [promise1, promise2] = await Promise.all([

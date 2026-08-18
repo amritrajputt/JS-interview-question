@@ -6,7 +6,7 @@ function createIterator(arr) {
     return {
         next: function () {
             if (ind < arr.length) return { value: arr[ind++], done: false };
-            return { value: undefined, done: false };
+            return { value: undefined, done: true };
         }
     }
 }
