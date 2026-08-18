@@ -26,3 +26,36 @@ function myPromiseAll(promises) {
         }
     })
 }
+
+
+//Medium — Implement Promise.allSettled from scratch.
+
+function myPromiseAllSetteled(promises) {
+    return new Promise((res, rej) => {
+        let completed = 0
+        let result = []
+         if(promises.length === 0){
+                res(result)
+                return
+            }
+        for (let i = 0; i < promises.length; i++) {
+            promises[i].then(val => {
+                result[i] = {
+                        status: "fulfilled",
+                        value: val
+                    };
+                completed++
+                if (completed === promises.length)  res(result)
+            }).catch((err) => {
+                result[i] ={
+                        status: "rejected",
+                        reason: err
+                    };
+                completed++
+                if (completed === promises.length) {
+                        res(result);
+                    }
+            })
+        }
+    })
+}
