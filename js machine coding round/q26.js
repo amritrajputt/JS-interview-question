@@ -17,7 +17,7 @@ function myPromiseAll(promises) {
                 .then(val => {
                     result[i] = val
                     completed++
-                    if (completed == promises.length) {
+                    if (completed === promises.length) {
                         res(result)
                     }
                 }).catch(error => {
