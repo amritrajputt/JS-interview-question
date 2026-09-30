@@ -12,12 +12,10 @@ function createIterator(arr) {
 }
 
 const str = createIterator(arr)
-console.log('====================================');
 console.log(str.next());
 console.log(str.next());
 console.log(str.next());
 console.log(str.next());
-console.log('====================================');
 
 //Implement the same using a generator function (function* and yield).
 
